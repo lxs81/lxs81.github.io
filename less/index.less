@@ -1,0 +1,2288 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f9f7f1;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    background-size: cover;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: relative;
+
+    #canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .btn {
+        position: absolute;
+        top: 30%;
+        right: 80%;
+        transform: translate(-50%, -50%);
+        width: 60px;
+        height: 60px;
+        background: url('../images/btn.png') no-repeat center center;
+        background-size: cover;
+        cursor: pointer;
+        text-align: right;
+        line-height: 50px;
+        font-size: 14px;
+        animation: move .3s linear alternate infinite;
+    }
+
+    @keyframes move {
+        to {
+            width: 75px;
+            height: 75px;
+        }
+    }
+
+    .tab_content {
+        .top {
+            width: 40px;
+            height: 40px;
+            background-color: #c00417;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            position: fixed;
+            top: 80%;
+            right: 35px;
+            z-index: 1;
+
+            a {
+                font-size: 20px;
+                color: #fff;
+            }
+        }
+    }
+
+    .foot {
+        width: 100%;
+        padding: 10px 0;
+        background-color: #c00417;
+        color: #fff;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    // 双开门begin内容
+    .begin {
+
+        .right,
+        .left {
+            position: absolute;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            transition: all 1s;
+        }
+
+        .right {
+            background: url('../images/opening(1).png') right top;
+            background-size: contain;
+            left: 0;
+        }
+
+        .left {
+            background: url('../images/opening(2).png');
+            background-size: contain;
+            right: 0;
+            // background-position: right 0;
+        }
+
+        .rightdiv {
+            transform: translateX(-100%);
+        }
+
+        .leftdiv {
+            transform: translateX(100%);
+        }
+    }
+
+    .tab {
+        position: relative;
+
+        .tab_head {
+            position: fixed;
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            background-color: rgb(255, 255, 255);
+            border-bottom: 1px solid #ccc;
+            text-align: center;
+            z-index: 2;
+
+            h2 {
+                display: flex;
+                position: absolute;
+                padding-left: 10px;
+                height: 40px;
+                font-size: 18px;
+                color: #c00417;
+
+                img {
+                    height: 100%;
+                    padding-right: 5px;
+                }
+            }
+
+            span {
+                position: absolute;
+                right: 0;
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+                font-size: 20px;
+                cursor: pointer;
+            }
+        }
+
+        .tab_list {
+            background-color: #fff;
+            position: fixed;
+            padding-top: 40px;
+            width: 100%;
+            box-sizing: border-box;
+            height: 0px;
+            transition: all 1s;
+            overflow-y: scroll;
+            z-index: 1;
+
+            ul {
+                list-style: none;
+
+                li {
+                    width: 100%;
+                    cursor: pointer;
+                    line-height: 40px;
+                    border-bottom: 1px solid #c00417;
+                    box-sizing: border-box;
+                    padding-left: 20px;
+                    font-weight: bold;
+                }
+
+                .active {
+                    background-color: #c00417;
+                    color: #fff;
+                }
+            }
+        }
+
+        .tab_listmove {
+            height: 285px;
+        }
+
+        .logo {
+            display: none;
+            line-height: 40px;
+            text-align: center;
+        }
+
+        .tab_content {
+            padding: 45px 5px 5px;
+
+            .item {
+                display: none;
+            }
+
+            .model {
+
+                .main_content {
+                    img {
+                        width: 100%;
+                        text-align: center;
+                        
+                    }
+                }
+
+                h2 {
+                    text-align: center;
+                    color: #080707;
+                    padding: 20px 0;
+
+                    img {
+                        vertical-align: bottom;
+                    }
+                }
+
+                .report1 {
+                    background-color: #f0e9e3;
+                    display: flex;
+                    justify-content: space-around;
+                    flex-wrap: wrap;
+
+                    .report_img {
+                        img {
+                            width: 100%;
+                            text-align: center;
+                        }
+
+                        video {
+                            width: 100%;
+                            text-align: center;
+                        }
+                    }
+
+                    .text1 {
+                        padding: 5px;
+                        width: 100%;
+                        overflow-y: scroll;
+                        overflow-x: hidden;
+
+                        h3 {
+                            text-align: center;
+                            color: #141414;
+                        }
+
+                        .txt1 {
+                            text-indent: 2em;
+                            line-height: 30px;
+                            text-align: justify;
+                        }
+
+
+                    }
+                }
+
+                .person {
+                    height: 250px;
+                    overflow-y: scroll;
+                    border-top: #c00417 1px solid;
+                    border-bottom: #c00417 1px solid;
+                    padding-bottom: 10px;
+
+                    ul {
+                        list-style: none;
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-around;
+
+
+                        li {
+                            cursor: pointer;
+                            margin-top: 10px;
+                            width: 250px;
+                            height: 250px;
+                            border-radius: 50%;
+                            overflow: hidden;
+                            position: relative;
+
+                            a {
+                                text-decoration: none;
+                                color: white;
+
+                                .img {
+                                    width: 250px;
+                                    height: 250px;
+                                    display: block;
+                                    border-radius: 50%;
+
+                                    img {
+                                        width: 100%;
+                                        height: 100%;
+                                        transition: all .5s;
+                                    }
+                                }
+
+                                .shadow {
+                                    position: absolute;
+                                    bottom: -45%;
+                                    left: 0;
+                                    width: 250px;
+                                    height: 250px;
+                                    background-color: rgba(135, 94, 67, 0.66);
+                                    // background-image: linear-gradient(transparent, rgba(253, 207, 48, 0.6));
+                                    transition: all .5s;
+                                    opacity: 0;
+                                }
+
+                                .text {
+                                    position: absolute;
+                                    left: 0;
+                                    text-align: center;
+                                    padding: 40px 60px;
+                                    z-index: 1;
+                                    transform: all 5s;
+                                }
+                            }
+                        }
+
+                        li:hover img {
+                            transform: scale(1.2);
+                        }
+
+                        li:hover .shadow {
+                            opacity: 1;
+                        }
+
+                        li:hover .text {
+                            transform: translateY(-100%);
+                        }
+                    }
+                }
+
+                h4 {
+                    margin: 30px;
+                    text-align: center;
+                    color: #c00417;
+
+                    img {
+                        vertical-align: bottom;
+                    }
+                }
+
+
+                // 旅游
+                .flexslider {
+                    margin: 0px auto;
+                    position: relative;
+                    width: 100%;
+                    height: 200px;
+                    overflow: hidden;
+                    zoom: 1;
+                }
+
+                .flexslider .slides li {
+                    width: 100%;
+                    height: 100%;
+                }
+
+                .flex-direction-nav li {
+                    list-style: none;
+                }
+
+                .flex-direction-nav a {
+                    width: 70px;
+                    height: 70px;
+                    line-height: 99em;
+                    overflow: hidden;
+                    margin: -35px 0 0;
+                    display: block;
+                    background: url('../images/ad_ctr.png') no-repeat;
+                    position: absolute;
+                    top: 50%;
+                    cursor: pointer;
+                    opacity: 0;
+                    filter: alpha(opacity=0);
+                    transition: all .3s ease;
+                    border-radius: 35px;
+                }
+
+                .flex-direction-nav .flex-next {
+                    background-position: 0 -70px;
+                    right: 0;
+                }
+
+                .flex-direction-nav .flex-prev {
+                    left: 0;
+                }
+
+                .flexslider:hover .flex-next {
+                    opacity: 0.8;
+                    filter: alpha(opacity=25);
+                    color: #000000;
+                }
+
+                .flexslider:hover .flex-prev {
+                    opacity: 0.8;
+                    filter: alpha(opacity=25);
+                    color: #000000;
+                }
+
+                .flexslider:hover .flex-next:hover,
+                .flexslider:hover .flex-prev:hover {
+                    opacity: 1;
+                    filter: alpha(opacity=50);
+                }
+
+                .flex-control-nav {
+                    width: 100%;
+                    position: absolute;
+                    bottom: 10px;
+                    text-align: center;
+                }
+
+                .flex-control-nav li {
+                    margin: 0 2px;
+                    display: inline-block;
+                    zoom: 1;
+                    *display: inline;
+                }
+
+                .flex-control-paging li a {
+                    background: url('../images/dot.png') no-repeat 0 -16px;
+                    display: block;
+                    height: 16px;
+                    overflow: hidden;
+                    text-indent: -99em;
+                    width: 16px;
+                    cursor: pointer;
+                }
+
+                .flex-control-paging li a.flex-active,
+                .flex-control-paging li.active a {
+                    background-position: 0 0;
+                }
+
+                .flexslider .slides a img {
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                }
+
+                h1 {
+                    text-align: center;
+                    color: #c00417;
+                    padding: 20px 0;
+                }
+
+                .report2 {
+                    background-color: #f0e9e3;
+                    overflow: hidden;
+                    display: flex;
+                    justify-content: space-around;
+                    flex-wrap: wrap;
+
+                    .report20 {
+                        // width: 555px;
+                        // height: 300px;
+
+                        video {
+                            height: 166px;
+                        }
+                    }
+
+                    .report21 {
+                        display: flex;
+                        justify-content: space-between;
+
+                        .report211 {
+                            width: 200px;
+                            margin-right: 5px;
+                            overflow: hidden;
+
+                            img {
+                                width: 100%;
+                                transition: all .5s;
+                            }
+
+                            img:hover {
+                                transform: scale(1.1);
+                            }
+                        }
+
+                        .report212 {
+                            display: none;
+                            overflow: hidden;
+                            font-size: 0;
+
+                            img {
+                                height: 48px;
+                                margin-bottom: 12px;
+                                transition: all .5s;
+                            }
+
+                            img:hover {
+                                transform: scale(1.1);
+                            }
+                        }
+                    }
+
+                    .report22 {
+                        text-indent: 2em;
+                        text-align: justify;
+                        line-height: 30px;
+                        padding: 5px;
+                        overflow-y: scroll;
+                    }
+                }
+
+                // 美食
+                .supercontent {
+                    display: flex;
+                    justify-content: space-evenly;
+
+                    .super {
+                        width: 600px;
+                        height: 112px;
+                        border: 3px solid #c00417;
+                        overflow: hidden;
+
+
+                        ul {
+                            list-style: none;
+                            display: block;
+                            width: 2000px;
+                            font-size: 0px;
+                            animation: run 10s infinite linear;
+
+                            li {
+                                display: inline-block;
+                                width: 200px;
+
+                                img {
+                                    width: 100%;
+                                }
+                            }
+                        }
+
+                        ul:hover {
+                            animation-play-state: paused;
+                        }
+
+                        @keyframes run {
+
+                            /* from{
+                            
+                        } */
+                            to {
+                                transform: translateX(-1400px);
+                            }
+                        }
+                    }
+                }
+
+                .word {
+                    line-height: 30px;
+                    padding: 20px 0;
+                    text-align: center;
+                    font-weight: bolder;
+                }
+
+                // 特产
+                .dream {
+                    display: flex;
+                    justify-content: space-around;
+                    flex-wrap: wrap;
+
+                    .iframe {
+                        width: 600px;
+                        height: 550px;
+                    }
+
+                    .dream1 {
+                        width: 350px;
+                        height: 550px;
+                        overflow: hidden;
+                        background-color: #f0e9e3;
+
+                        .dream11 {
+                            padding-top: 15px;
+                            height: 70px;
+                            background-color: #c00417;
+
+                            h3 {
+                                line-height: 30px;
+                                text-align: center;
+                                color: #fff;
+                            }
+                        }
+
+                        .dream1_txt {
+                            overflow-y: scroll;
+                            padding: 15px;
+                            text-align: justify;
+                            text-indent: 2em;
+                            line-height: 30px;
+
+                            .pic1,
+                            .pic2 {
+                                background-color: #c00417;
+                                height: 200px;
+                                margin: 0 auto;
+                                border-radius: 10px;
+                                box-shadow: 2px 2px 10px #4c3b36;
+                                margin-top: 15px;
+                            }
+
+                            .pic1 {
+                                background: url('../images/four/07.jpg') no-repeat center center;
+                                background-size: cover;
+                            }
+
+                            .pic2 {
+                                background: url('../images/four/08.jpg') no-repeat center center;
+                                background-size: cover;
+                            }
+                        }
+                    }
+                }
+
+                .dream2 {
+                    height: 100px;
+                    background-color: #f0e9e3;
+                    display: flex;
+                    margin-bottom: 20px;
+
+                    .report_img {
+                        width: 150px;
+
+                        img {
+                            height: 100%;
+                        }
+
+                        video {
+                            height: 100%;
+                        }
+                    }
+
+                    .text1 {
+                        padding: 5px;
+                        width: 100%;
+                        overflow-y: scroll;
+                        overflow-x: hidden;
+
+                        h3 {
+                            text-align: center;
+                            color: #c00417;
+                        }
+
+                        .txt1 {
+                            text-indent: 2em;
+                            line-height: 35px;
+                            text-align: justify;
+                        }
+
+                    }
+                }
+
+                // 非遗
+                .future {
+                    background-color: #f0e9e3;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-around;
+
+                    .report_img {
+                        img {
+                            width: 100%;
+                        }
+
+                        video {
+                            width: 100%;
+                        }
+                    }
+
+                    .text1 {
+                        padding: 5px;
+                        width: 100%;
+                        overflow-y: scroll;
+                        overflow-x: hidden;
+
+                        h3 {
+                            text-align: center;
+                            color: #c00417;
+                        }
+
+                        .txt1 {
+                            text-indent: 2em;
+                            line-height: 35px;
+                            text-align: justify;
+                        }
+
+                    }
+                }
+
+                .future1 {
+                    height: 210px;
+                    display: flex;
+                    margin-bottom: 20px;
+
+                    .report_img {
+                        overflow: hidden;
+                        border-radius: 50%;
+                        margin-left: 15px;
+
+                        img {
+                            height: 100%;
+                        }
+
+                        video {
+                            height: 100%;
+                        }
+                    }
+
+                    .text1 {
+                        background-color: #f0e9e3;
+                        border-radius: 15px;
+                        padding: 5px;
+                        width: 100%;
+                        overflow-y: scroll;
+                        overflow-x: hidden;
+
+                        h3 {
+                            text-align: center;
+                            color: #c00417;
+                        }
+
+                        .txt1 {
+                            text-indent: 2em;
+                            // line-height: 35px;
+                            text-align: justify;
+                        }
+                    }
+                }
+
+
+                // 数据
+                .view {
+                    display: flex;
+                    justify-content: space-around;
+                    flex-wrap: wrap;
+
+                    .view1 {
+                        width: 400px;
+                        height: 400px;
+                        border: 1px solid #ccc;
+                        position: relative;
+                        margin-bottom: 10px;
+                        background-color: #ffffff;
+
+                        .visual {
+                            width: 300px;
+                            height: 400px;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+
+                        .box1 {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 5px;
+                            height: 5px;
+                            border-top: 3px solid #c00417;
+                            border-left: 3px solid #c00417;
+                        }
+
+                        .box2 {
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            width: 5px;
+                            height: 5px;
+                            border-top: 3px solid #c00417;
+                            border-right: 3px solid #c00417;
+                        }
+
+                        .box3 {
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            width: 5px;
+                            height: 5px;
+                            border-bottom: 3px solid #c00417;
+                            border-left: 3px solid #c00417;
+                        }
+
+                        .box4 {
+                            position: absolute;
+                            bottom: 0;
+                            right: 0;
+                            width: 5px;
+                            height: 5px;
+                            border-bottom: 3px solid #c00417;
+                            border-right: 3px solid #c00417;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* 小屏幕 */
+
+@media screen and (min-width: 768px) and (max-width: 1085px) {
+
+    // 双开门begin内容
+    .begin {
+
+        .right,
+        .left {
+            position: absolute;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            transition: all 1s;
+        }
+
+        .right {
+            background: url('../images/opening(1).png') right top;
+            background-size: contain;
+            left: 0;
+        }
+
+        .left {
+            background: url('../images/opening(2).png');
+            background-size: contain;
+            right: 0;
+            // background-position: right 0;
+        }
+
+        .rightdiv {
+            transform: translateX(-100%);
+        }
+
+        .leftdiv {
+            transform: translateX(100%);
+        }
+    }
+
+    .content {
+        .tab {
+            .tab_head {
+                display: none;
+            }
+
+            .tab_list {
+                width: 100%;
+                position: fixed;
+                height: 60px;
+                border-bottom: 0.5px solid #ccc;
+                display: flex;
+                justify-content: space-between;
+                background-color: #fff;
+                z-index: 2;
+
+                ul {
+                    list-style: none;
+                    display: flex;
+                    justify-content: space-between;
+
+                    li {
+                        cursor: pointer;
+                        text-align: center;
+                        line-height: 60px;
+                        padding: 0 10px;
+                        font-weight: bold;
+                        position: relative;
+                    }
+
+                    .active::before {
+                        content: '';
+                        width: 15px;
+                        height: 15px;
+                        background: url('../images/dang.png') no-repeat center center;
+                        background-size: cover;
+                        color: transparent;
+                        position: absolute;
+                        bottom: 0px;
+                        left: 50%;
+                        transform: translate(-50%);
+                    }
+
+                    .active {
+                        background-color: #c00417;
+                        color: rgb(255, 255, 255);
+                    }
+                }
+            }
+
+            .logo {
+                width: 50px;
+                display: flex;
+                padding: 10px;
+                font-size: 0px;
+                line-height: 60px;
+                color: #c00417;
+
+                img {
+                    height: 100%;
+                    padding-right: 5px;
+                }
+            }
+
+            .tab_content {
+                padding: 70px 10px 10px;
+
+                .item {
+                    display: none;
+                }
+
+                .model {
+
+                    // 旅游
+                    .main_content {
+                        img {
+                            width: 100%;
+                        }
+                    }
+
+                    h2 {
+                        text-align: center;
+                        color: #c00417;
+                        padding: 40px 0;
+                        font-size: 30px;
+
+                        img {
+                            vertical-align: bottom;
+                        }
+                    }
+
+                    .report1 {
+                        height: 250px;
+                        background-color: #f0e9e3;
+                        display: flex;
+
+                        .report_img {
+                            width: 306px;
+
+                            img {
+                                height: 100%;
+                            }
+
+                            video {
+                                width: 306px;
+                            }
+                        }
+
+                        .text1 {
+                            padding: 15px;
+                            width: 100%;
+                            overflow-y: scroll;
+                            overflow-x: hidden;
+
+                            h3 {
+                                text-align: center;
+                                color: #c00417;
+                            }
+
+                            .txt1 {
+                                text-indent: 2em;
+                                line-height: 35px;
+                                text-align: justify;
+                            }
+                        }
+                    }
+
+                    .cw {
+                        height: 172.5px;
+                    }
+
+                    .person {
+                        height: 250px;
+                        overflow-y: scroll;
+                        border-top: #c00417 1px solid;
+                        border-bottom: #c00417 1px solid;
+                        padding-bottom: 10px;
+
+                        ul {
+                            list-style: none;
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: space-between;
+
+
+                            li {
+                                cursor: pointer;
+                                margin-top: 10px;
+                                width: 250px;
+                                height: 250px;
+                                border-radius: 50%;
+                                overflow: hidden;
+                                position: relative;
+
+                                a {
+                                    text-decoration: none;
+                                    color: white;
+
+                                    .img {
+                                        width: 250px;
+                                        height: 250px;
+                                        display: block;
+                                        border-radius: 50%;
+
+                                        img {
+                                            width: 100%;
+                                            height: 100%;
+                                            transition: all .5s;
+                                        }
+                                    }
+
+                                    .shadow {
+                                        position: absolute;
+                                        bottom: -45%;
+                                        left: 0;
+                                        width: 250px;
+                                        height: 250px;
+                                        background-color: rgba(135, 94, 67, 0.66);
+                                        // background-image: linear-gradient(transparent, rgba(253, 207, 48, 0.6));
+                                        transition: all .5s;
+                                        opacity: 0;
+                                    }
+
+                                    .text {
+                                        position: absolute;
+                                        left: 0;
+                                        text-align: center;
+                                        padding: 40px 60px;
+                                        z-index: 1;
+                                        transform: all 5s;
+                                    }
+                                }
+                            }
+
+                            li:hover img {
+                                transform: scale(1.2);
+                            }
+
+                            li:hover .shadow {
+                                opacity: 1;
+                            }
+
+                            li:hover .text {
+                                transform: translateY(-100%);
+                            }
+                        }
+                    }
+
+                    h4 {
+                        margin: 30px;
+                        text-align: center;
+                        color: #c00417;
+
+                        img {
+                            vertical-align: bottom;
+                        }
+                    }
+
+                    // 美食
+                    .flexslider {
+                        margin: 0px auto 20px;
+                        position: relative;
+                        width: 100%;
+                        height: 300px;
+                        overflow: hidden;
+                        zoom: 1;
+                    }
+
+                    .flexslider .slides li {
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    .flex-direction-nav li {
+                        list-style: none;
+                    }
+
+                    .flex-direction-nav a {
+                        width: 70px;
+                        height: 70px;
+                        line-height: 99em;
+                        overflow: hidden;
+                        margin: -35px 0 0;
+                        display: block;
+                        background: url('../images/ad_ctr.png') no-repeat;
+                        position: absolute;
+                        top: 50%;
+                        z-index: 10;
+                        cursor: pointer;
+                        opacity: 0;
+                        filter: alpha(opacity=0);
+                        transition: all .3s ease;
+                        border-radius: 35px;
+                    }
+
+                    .flex-direction-nav .flex-next {
+                        background-position: 0 -70px;
+                        right: 0;
+                    }
+
+                    .flex-direction-nav .flex-prev {
+                        left: 0;
+                    }
+
+                    .flexslider:hover .flex-next {
+                        opacity: 0.8;
+                        filter: alpha(opacity=25);
+                        color: #000000;
+                    }
+
+                    .flexslider:hover .flex-prev {
+                        opacity: 0.8;
+                        filter: alpha(opacity=25);
+                        color: #000000;
+                    }
+
+                    .flexslider:hover .flex-next:hover,
+                    .flexslider:hover .flex-prev:hover {
+                        opacity: 1;
+                        filter: alpha(opacity=50);
+                    }
+
+                    .flex-control-nav {
+                        width: 100%;
+                        position: absolute;
+                        bottom: 10px;
+                        text-align: center;
+                    }
+
+                    .flex-control-nav li {
+                        margin: 0 2px;
+                        display: inline-block;
+                        zoom: 1;
+                        *display: inline;
+                    }
+
+                    .flex-control-paging li a {
+                        background: url('../images/dot.png') no-repeat 0 -16px;
+                        display: block;
+                        height: 16px;
+                        overflow: hidden;
+                        text-indent: -99em;
+                        width: 16px;
+                        cursor: pointer;
+                    }
+
+                    .flex-control-paging li a.flex-active,
+                    .flex-control-paging li.active a {
+                        background-position: 0 0;
+                    }
+
+                    .flexslider .slides a img {
+                        width: 100%;
+                        height: 100%;
+                        display: block;
+                    }
+
+                    h1 {
+                        text-align: center;
+                        color: #c00417;
+                        padding: 20px 0;
+                    }
+
+                    .report2 {
+                        height: 167px;
+                        background-color: #f0e9e3;
+                        overflow: hidden;
+                        display: flex;
+                        justify-content: space-between;
+
+                        .report20 {
+                            width: 296px;
+                            // width: 555px;
+                            // height: 300px;
+
+                            video {
+                                height: 100%;
+                            }
+                        }
+
+                        .report21 {
+                            display: flex;
+                            justify-content: space-between;
+
+                            .report211 {
+                                width: 250px;
+                                margin-right: 12px;
+                                overflow: hidden;
+
+                                img {
+                                    width: 100%;
+                                    transition: all .5s;
+                                }
+
+                                img:hover {
+                                    transform: scale(1.1);
+                                }
+                            }
+
+                            .report212 {
+                                width: 137px;
+                                height: 300px;
+                                overflow: hidden;
+                                font-size: 0;
+
+                                img {
+                                    height: 77px;
+                                    margin-bottom: 12px;
+                                    transition: all .5s;
+                                }
+
+                                img:hover {
+                                    transform: scale(1.1);
+                                }
+                            }
+                        }
+
+                        .report22 {
+                            text-indent: 2em;
+                            text-align: justify;
+                            line-height: 30px;
+                            padding: 20px;
+                            overflow-y: scroll;
+                        }
+                    }
+
+                    // 特产
+                    .supercontent {
+                        display: flex;
+                        justify-content: space-evenly;
+
+                        .super {
+                            width: 600px;
+                            height: 112px;
+                            border: 3px solid #c00417;
+                            overflow: hidden;
+
+
+                            ul {
+                                list-style: none;
+                                display: block;
+                                width: 2000px;
+                                font-size: 0px;
+                                animation: run 10s infinite linear;
+
+                                li {
+                                    display: inline-block;
+                                    width: 200px;
+
+                                    img {
+                                        width: 100%;
+                                    }
+                                }
+                            }
+
+                            ul:hover {
+                                animation-play-state: paused;
+                            }
+
+                            @keyframes run {
+
+                                /* from{
+                                
+                            } */
+                                to {
+                                    transform: translateX(-1400px);
+                                }
+                            }
+                        }
+                    }
+
+                    .word {
+                        line-height: 30px;
+                        padding: 20px 0;
+                        text-align: center;
+                        font-weight: bolder;
+                    }
+
+                    // 非遗
+                    .dream {
+                        display: flex;
+                        justify-content: space-around;
+                        flex-wrap: wrap;
+
+                        .iframe {
+                            width: 600px;
+                            height: 550px;
+                        }
+
+                        .dream1 {
+                            width: 350px;
+                            height: 550px;
+                            overflow: hidden;
+                            background-color: #f0e9e3;
+
+                            .dream11 {
+                                padding-top: 15px;
+                                height: 70px;
+                                background-color: #c00417;
+
+                                h3 {
+                                    line-height: 30px;
+                                    text-align: center;
+                                    color: #fff;
+                                }
+                            }
+
+                            .dream1_txt {
+                                overflow-y: scroll;
+                                padding: 15px;
+                                text-align: justify;
+                                text-indent: 2em;
+                                line-height: 30px;
+
+                                .pic1,
+                                .pic2 {
+                                    background-color: #c00417;
+                                    height: 200px;
+                                    margin: 0 auto;
+                                    border-radius: 10px;
+                                    box-shadow: 2px 2px 10px #4c3b36;
+                                    margin-top: 15px;
+                                }
+
+                                .pic1 {
+                                    background: url('../images/four/07.jpg') no-repeat center center;
+                                    background-size: cover;
+                                }
+
+                                .pic2 {
+                                    background: url('../images/four/08.jpg') no-repeat center center;
+                                    background-size: cover;
+                                }
+                            }
+                        }
+                    }
+
+                    .dream2 {
+                        height: 250px;
+                        background-color: #f0e9e3;
+                        display: flex;
+                        margin-bottom: 20px;
+
+                        .report_img {
+                            width: 375px;
+
+                            img {
+                                height: 100%;
+                            }
+
+                            video {
+                                height: 100%;
+                            }
+                        }
+
+                        .text1 {
+                            padding: 15px;
+                            width: 100%;
+                            overflow-y: scroll;
+                            overflow-x: hidden;
+
+                            h3 {
+                                text-align: center;
+                                color: #c00417;
+                            }
+
+                            .txt1 {
+                                text-indent: 2em;
+                                line-height: 35px;
+                                text-align: justify;
+                            }
+
+                        }
+                    }
+
+                    // 节日
+                    .future {
+                        height: 250px;
+                        background-color: #f0e9e3;
+                        display: flex;
+                        margin-bottom: 20px;
+
+                        .report_img {
+                            width: 328px;
+
+                            img {
+                                height: 100%;
+                            }
+
+                            video {
+                                height: 100%;
+                            }
+                        }
+
+                        .text1 {
+                            padding: 15px;
+                            width: 100%;
+                            overflow-y: scroll;
+                            overflow-x: hidden;
+
+                            h3 {
+                                text-align: center;
+                                color: #c00417;
+                            }
+
+                            .txt1 {
+                                text-indent: 2em;
+                                line-height: 35px;
+                                text-align: justify;
+                            }
+
+                        }
+                    }
+
+                    .future1 {
+                        height: 250px;
+                        display: flex;
+                        margin-bottom: 20px;
+
+                        .report_img {
+                            overflow: hidden;
+                            border-radius: 50%;
+                            margin-left: 15px;
+
+                            img {
+                                height: 100%;
+                            }
+
+                            video {
+                                height: 100%;
+                            }
+                        }
+
+                        .text1 {
+                            background-color: #f0e9e3;
+                            border-radius: 15px;
+                            padding: 15px;
+                            width: 100%;
+                            overflow-y: scroll;
+                            overflow-x: hidden;
+
+                            h3 {
+                                text-align: center;
+                                color: #c00417;
+                            }
+
+                            .txt1 {
+                                text-indent: 2em;
+                                line-height: 35px;
+                                text-align: justify;
+                            }
+
+                        }
+                    }
+
+                    // 数据
+                    .view {
+                        display: flex;
+                        justify-content: space-around;
+                        flex-wrap: wrap;
+
+                        .view1 {
+                            width: 245px;
+                            height: 400px;
+                            background-color: #ffffff;
+                            border: 1px solid #ccc;
+                            position: relative;
+                            margin-bottom: 10px;
+
+                            .visual {
+                                width: 245px;
+                                height: 400px;
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                            }
+
+                            .box1 {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 5px;
+                                height: 5px;
+                                border-top: 3px solid #c00417;
+                                border-left: 3px solid #c00417;
+                            }
+
+                            .box2 {
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                width: 5px;
+                                height: 5px;
+                                border-top: 3px solid #c00417;
+                                border-right: 3px solid #c00417;
+                            }
+
+                            .box3 {
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                width: 5px;
+                                height: 5px;
+                                border-bottom: 3px solid #c00417;
+                                border-left: 3px solid #c00417;
+                            }
+
+                            .box4 {
+                                position: absolute;
+                                bottom: 0;
+                                right: 0;
+                                width: 5px;
+                                height: 5px;
+                                border-bottom: 3px solid #c00417;
+                                border-right: 3px solid #c00417;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* 大屏幕 */
+
+@media screen and (min-width: 1085px) {
+
+    // 双开门begin内容
+    .begin {
+
+        .right,
+        .left {
+            position: absolute;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            transition: all 1s;
+        }
+
+        .right {
+            background: url('../images/opening(1).png') right top;
+            background-size: cover;
+            left: 0;
+        }
+
+        .left {
+            background: url('../images/opening(2).png');
+            background-size: cover;
+            right: 0;
+            // background-position: right 0;
+        }
+
+        .rightdiv {
+            transform: translateX(-100%);
+        }
+
+        .leftdiv {
+            transform: translateX(100%);
+        }
+    }
+
+    .content {
+        .tab {
+            .tab_head {
+                display: none;
+            }
+
+            .tab_list {
+                width: 100%;
+                position: fixed;
+                height: 60px;
+                border-bottom: 0.5px solid #ccc;
+                display: flex;
+                justify-content: space-between;
+                background-color: #fff;
+                z-index: 2;
+
+                ul {
+                    list-style: none;
+                    display: flex;
+                    justify-content: space-between;
+
+                    li {
+                        cursor: pointer;
+                        text-align: center;
+                        line-height: 60px;
+                        padding: 0 15px;
+                        font-weight: bold;
+
+                        // position: relative;
+                    }
+
+                    .active::before {
+                        content: '222';
+                        width: 10px;
+                        height: 10px;
+                        background: url('../images/dang.png') no-repeat center center;
+                        background-size: contain;
+                        margin-right: 3px;
+                        color: transparent;
+                        // position: absolute;
+                        // bottom: 0px;
+                        // left: 50%;
+                        // transform: translate(-50%);
+                    }
+
+                    .active {
+                        background-color: #c00417;
+                        color: rgb(255, 255, 255);
+                    }
+                }
+            }
+
+            .logo {
+                width: 320px;
+                display: flex;
+                padding: 10px;
+                line-height: 40px;
+                color: #c00417;
+
+                img {
+                    height: 100%;
+                    padding-right: 10px;
+
+                }
+            }
+
+            .tab_content {
+                padding: 70px 100px 10px;
+
+                .item {
+                    display: none;
+                }
+
+                .model {
+
+                    // 旅游
+                    .main_content {
+                        img {
+                            width: 100%;
+                        }
+                    }
+
+                    h2 {
+                        text-align: center;
+                        color: #c00417;
+                        padding: 50px 0;
+                        font-size: 30px;
+
+                        img {
+                            vertical-align: bottom;
+                        }
+                    }
+
+                    .report1 {
+                        height: 300px;
+                        background-color: #f0e9e3;
+                        display: flex;
+
+                        .report_img {
+                            width: 367.5px;
+
+                            img {
+                                height: 100%;
+                            }
+
+                            video {
+                                width: 367.5px;
+                            }
+                        }
+
+                        .text1 {
+                            padding: 15px;
+                            width: 100%;
+                            overflow-y: scroll;
+                            overflow-x: hidden;
+
+                            h3 {
+                                text-align: center;
+                                color: #c00417;
+                            }
+
+                            .txt1 {
+                                text-indent: 2em;
+                                line-height: 35px;
+                                text-align: justify;
+                            }
+
+
+                        }
+                    }
+
+                    .cw {
+                        height: 207.5px;
+                    }
+
+                    .person {
+                        height: 300px;
+                        overflow-y: scroll;
+                        border-top: #c00417 1px solid;
+                        border-bottom: #c00417 1px solid;
+                        padding-bottom: 10px;
+
+                        ul {
+                            list-style: none;
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: space-between;
+
+
+                            li {
+                                cursor: pointer;
+                                margin-top: 10px;
+                                width: 300px;
+                                height: 300px;
+                                border-radius: 50%;
+                                overflow: hidden;
+                                position: relative;
+
+                                a {
+                                    text-decoration: none;
+                                    color: white;
+
+                                    .img {
+                                        width: 300px;
+                                        height: 300px;
+                                        display: block;
+                                        border-radius: 50%;
+
+                                        img {
+                                            width: 100%;
+                                            height: 100%;
+                                            transition: all .5s;
+                                        }
+                                    }
+
+                                    .shadow {
+                                        position: absolute;
+                                        bottom: -45%;
+                                        left: 0;
+                                        width: 300px;
+                                        height: 300px;
+                                        background-color: rgba(135, 94, 67, 0.66);
+                                        // background-image: linear-gradient(transparent, rgba(253, 207, 48, 0.6));
+                                        transition: all .5s;
+                                        opacity: 0;
+                                    }
+
+                                    .text {
+                                        position: absolute;
+                                        left: 0;
+                                        text-align: center;
+                                        padding: 60px 60px;
+                                        z-index: 1;
+                                        transform: all 5s;
+                                    }
+                                }
+                            }
+
+                            li:hover img {
+                                transform: scale(1.2);
+                            }
+
+                            li:hover .shadow {
+                                opacity: 1;
+                            }
+
+                            li:hover .text {
+                                transform: translateY(-100%);
+                            }
+                        }
+                    }
+
+                    h4 {
+                        margin: 30px;
+                        text-align: center;
+                        color: #c00417;
+
+                        img {
+                            vertical-align: bottom;
+                        }
+                    }
+
+
+                    // 美食
+                    .flexslider {
+                        margin: 0px auto 20px;
+                        position: relative;
+                        width: 100%;
+                        height: 400px;
+                        overflow: hidden;
+                        zoom: 1;
+                    }
+
+                    .flexslider .slides li {
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    .flex-direction-nav li {
+                        list-style: none;
+                    }
+
+                    .flex-direction-nav a {
+                        width: 70px;
+                        height: 70px;
+                        line-height: 99em;
+                        overflow: hidden;
+                        margin: -35px 0 0;
+                        display: block;
+                        background: url('../images/ad_ctr.png') no-repeat;
+                        position: absolute;
+                        top: 50%;
+                        z-index: 10;
+                        cursor: pointer;
+                        opacity: 0;
+                        filter: alpha(opacity=0);
+                        transition: all .3s ease;
+                        border-radius: 35px;
+                    }
+
+                    .flex-direction-nav .flex-next {
+                        background-position: 0 -70px;
+                        right: 0;
+                    }
+
+                    .flex-direction-nav .flex-prev {
+                        left: 0;
+                    }
+
+                    .flexslider:hover .flex-next {
+                        opacity: 0.8;
+                        filter: alpha(opacity=25);
+                        color: #000000;
+                    }
+
+                    .flexslider:hover .flex-prev {
+                        opacity: 0.8;
+                        filter: alpha(opacity=25);
+                        color: #000000;
+                    }
+
+                    .flexslider:hover .flex-next:hover,
+                    .flexslider:hover .flex-prev:hover {
+                        opacity: 1;
+                        filter: alpha(opacity=50);
+                    }
+
+                    .flex-control-nav {
+                        width: 100%;
+                        position: absolute;
+                        bottom: 10px;
+                        text-align: center;
+                    }
+
+                    .flex-control-nav li {
+                        margin: 0 2px;
+                        display: inline-block;
+                        zoom: 1;
+                        *display: inline;
+                    }
+
+                    .flex-control-paging li a {
+                        background: url('../images/dot.png') no-repeat 0 -16px;
+                        display: block;
+                        height: 16px;
+                        overflow: hidden;
+                        text-indent: -99em;
+                        width: 16px;
+                        cursor: pointer;
+                    }
+
+                    .flex-control-paging li a.flex-active,
+                    .flex-control-paging li.active a {
+                        background-position: 0 0;
+                    }
+
+                    .flexslider .slides a img {
+                        width: 100%;
+                        height: 100%;
+                        display: block;
+                    }
+
+                    h1 {
+                        text-align: center;
+                        color: #c00417;
+                        padding: 20px 0;
+                    }
+
+                    .report2 {
+                        height: 300px;
+                        background-color: #f0e9e3;
+                        overflow: hidden;
+                        display: flex;
+                        justify-content: space-between;
+
+                        .report20 {
+                            width: 555px;
+                            height: 300px;
+
+                            video {
+                                height: 100%;
+                            }
+                        }
+
+                        .report21 {
+                            height: 300px;
+                            display: flex;
+                            justify-content: space-between;
+
+                            .report211 {
+                                width: 450px;
+                                height: 300px;
+                                background-color: #c00417;
+                                margin-right: 12px;
+                                overflow: hidden;
+
+                                img {
+                                    width: 100%;
+                                    transition: all .5s;
+                                }
+
+                                img:hover {
+                                    transform: scale(1.1);
+                                }
+                            }
+
+                            .report212 {
+                                width: 256px;
+                                height: 300px;
+                                overflow: hidden;
+                                font-size: 0;
+
+                                img {
+                                    height: 144px;
+                                    margin-bottom: 12px;
+                                    transition: all .5s;
+                                }
+
+                                img:hover {
+                                    transform: scale(1.1);
+                                }
+                            }
+                        }
+
+                        .report22 {
+                            text-align: justify;
+                            text-indent: 2em;
+                            line-height: 30px;
+                            padding: 20px;
+                            overflow-y: scroll;
+                        }
+                    }
+
+                    // 特产
+                    .supercontent {
+                        display: flex;
+                        justify-content: space-evenly;
+
+                        .super {
+                            width: 600px;
+                            height: 112px;
+                            border: 3px solid #c00417;
+                            overflow: hidden;
+
+
+                            ul {
+                                list-style: none;
+                                display: block;
+                                width: 2000px;
+                                font-size: 0px;
+                                animation: run 10s infinite linear;
+
+                                li {
+                                    display: inline-block;
+                                    width: 200px;
+
+                                    img {
+                                        width: 100%;
+                                    }
+                                }
+                            }
+
+                            ul:hover {
+                                animation-play-state: paused;
+                            }
+
+                            @keyframes run {
+
+                                /* from{
+                                
+                            } */
+                                to {
+                                    transform: translateX(-1400px);
+                                }
+                            }
+                        }
+                    }
+
+                    .word {
+                        line-height: 30px;
+                        padding: 20px 0;
+                        text-align: center;
+                        font-weight: bolder;
+                    }
+
+                    // 非遗
+                    .dream {
+                        display: flex;
+                        justify-content: space-between;
+
+                        .iframe {
+                            width: 600px;
+                            height: 550px;
+                        }
+
+                        .dream1 {
+                            width: 350px;
+                            height: 550px;
+                            overflow: hidden;
+                            background-color: #f0e9e3;
+
+                            .dream11 {
+                                padding-top: 15px;
+                                height: 70px;
+                                background-color: #c00417;
+
+                                h3 {
+                                    line-height: 30px;
+                                    text-align: center;
+                                    color: #fff;
+                                }
+                            }
+
+                            .dream1_txt {
+                                overflow-y: scroll;
+                                padding: 15px;
+                                text-align: justify;
+                                text-indent: 2em;
+                                line-height: 30px;
+
+                                .pic1,
+                                .pic2 {
+                                    background-color: #c00417;
+                                    height: 200px;
+                                    margin: 0 auto;
+                                    border-radius: 10px;
+                                    box-shadow: 2px 2px 10px #4c3b36;
+                                    margin-top: 15px;
+                                }
+
+                                .pic1 {
+                                    background: url('../images/four/07.jpg') no-repeat center center;
+                                    background-size: cover;
+                                }
+
+                                .pic2 {
+                                    background: url('../images/four/08.jpg') no-repeat center center;
+                                    background-size: cover;
+                                }
+                            }
+                        }
+                    }
+
+                    .dream2 {
+                        height: 250px;
+                        background-color: #f0e9e3;
+                        display: flex;
+                        margin-bottom: 20px;
+
+                        .report_img {
+                            width: 375px;
+
+                            img {
+                                height: 100%;
+                            }
+
+                            video {
+                                height: 100%;
+                            }
+                        }
+
+                        .text1 {
+                            padding: 15px;
+                            width: 100%;
+                            overflow-y: scroll;
+                            overflow-x: hidden;
+
+                            h3 {
+                                text-align: center;
+                                color: #c00417;
+                            }
+
+                            .txt1 {
+                                text-indent: 2em;
+                                line-height: 35px;
+                                text-align: justify;
+                            }
+
+                        }
+                    }
+
+                    // 产业
+                    .future {
+                        height: 250px;
+                        background-color: #f0e9e3;
+                        display: flex;
+                        margin-bottom: 20px;
+
+                        .report_img {
+                            width: 328.5px;
+
+                            img {
+                                height: 100%;
+                            }
+
+                            video {
+                                height: 100%;
+                            }
+                        }
+
+                        .text1 {
+                            padding: 15px;
+                            width: 100%;
+                            overflow-y: scroll;
+                            overflow-x: hidden;
+
+                            h3 {
+                                text-align: center;
+                                color: #c00417;
+                            }
+
+                            .txt1 {
+                                text-indent: 2em;
+                                line-height: 35px;
+                                text-align: justify;
+                            }
+
+                        }
+                    }
+
+                    .future1 {
+                        height: 250px;
+                        display: flex;
+                        margin-bottom: 20px;
+
+                        .report_img {
+                            overflow: hidden;
+                            border-radius: 50%;
+                            margin-left: 15px;
+
+                            img {
+                                height: 100%;
+                            }
+
+                            video {
+                                height: 100%;
+                                text-align: center;
+                            }
+                        }
+
+                        .text1 {
+                            background-color: #f0e9e3;
+                            border-radius: 15px;
+                            padding: 15px;
+                            width: 100%;
+                            overflow-y: scroll;
+                            overflow-x: hidden;
+
+                            h3 {
+                                text-align: center;
+                                color: #c00417;
+                            }
+
+                            .txt1 {
+                                text-indent: 2em;
+                                line-height: 35px;
+                                text-align: justify;
+                            }
+
+                        }
+                    }
+
+                    // 数据
+                    .view {
+                        display: flex;
+                        justify-content: space-around;
+                        flex-wrap: wrap;
+
+                        .view1 {
+                            width: 290px;
+                            height: 400px;
+                            border: 1px solid #ccc;
+                            position: relative;
+                            margin-bottom: 10px;
+                            background-color: #ffff;
+
+                            .visual {
+                                width: 290px;
+                                height: 400px;
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                            }
+
+                            .box1 {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 5px;
+                                height: 5px;
+                                border-top: 3px solid #c00417;
+                                border-left: 3px solid #c00417;
+                            }
+
+                            .box2 {
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                width: 5px;
+                                height: 5px;
+                                border-top: 3px solid #c00417;
+                                border-right: 3px solid #c00417;
+                            }
+
+                            .box3 {
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                width: 5px;
+                                height: 5px;
+                                border-bottom: 3px solid #c00417;
+                                border-left: 3px solid #c00417;
+                            }
+
+                            .box4 {
+                                position: absolute;
+                                bottom: 0;
+                                right: 0;
+                                width: 5px;
+                                height: 5px;
+                                border-bottom: 3px solid #c00417;
+                                border-right: 3px solid #c00417;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+/*里面的代码可以根据自己需求去进行更改*/
+/* 设置滚动条的样式 */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* 滚动槽 */
+::-webkit-scrollbar-track {
+    box-shadow: inset 6px rgb(192, 4, 23);
+}
+
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+    background: #c00417;
+    box-shadow: inset 6px rgb(192, 4, 23);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(255, 0, 0, 0.4);
+}
