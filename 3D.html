@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            
+        }
+
+        .box {
+            width: 600px;
+            height: 650px;
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            transform: translate(-50%);
+            /* background-color: brown; */
+            perspective: 1000px;
+            overflow: hidden;
+            padding: 175px 0;
+            box-sizing: border-box;
+        }
+
+        ul {
+            list-style: none;
+            font-size: 0px;
+            transform-style: preserve-3d;
+            /* background-color: rgb(25, 12, 12); */
+            animation: run 7s infinite linear;
+            cursor: pointer;
+        }
+
+        li {
+            display: inline-block;
+            width: 200px;
+            height: 300px;
+            /* 渐变代码 */
+            -webkit-box-reflect: below 25px -webkit-linear-gradient(transparent 70%, rgba(255,
+                        255, 255, 0.3));
+        }
+
+        li:nth-child(1) {
+            transform: translateZ(110px) rotateY(120deg);
+            background-color: rgb(245, 215, 22);
+            background: url('./images/four/01.jpg') no-repeat top center;
+            background-size: cover;
+        }
+
+        li:nth-child(2) {
+            transform: translateZ(230px);
+            background-color: rgb(48, 92, 130);
+            background: url('./images/four/02.jpg') no-repeat top center;
+            /* background-size: contain; */
+        }
+
+        li:nth-child(3) {
+            transform: translateZ(110px) rotateY(-120deg);
+            background-color: rgb(28, 219, 139);
+            background: url('./images/four/03.jpg') no-repeat top center;
+            background-size: contain;
+        }
+
+        li:nth-child(4) {
+            transform: translateX(390px) translateZ(-105px) rotateY(120deg) translateY(-300px);
+            background-color: rgb(227, 26, 170);
+            background: url('./images/four/04.jpg') no-repeat top center;
+            background-size: cover;
+        }
+
+        li:nth-child(5) {
+            background-color: aqua;
+            transform: translateX(0px) translateZ(-205px) translateY(-300px);
+            background: url('./images/four/05.jpg') no-repeat top center;
+            /* background-size: contain; */
+        }
+
+        li:nth-child(6) {
+            background-color: blueviolet;
+            transform: translateX(-390px) translateZ(-105px) rotateY(-120deg) translateY(-300px);
+            background: url('./images/four/06.jpg') no-repeat top center;
+            background-size: contain;
+        }
+
+        @keyframes run {
+            to {
+                transform: rotateY(360deg);
+            }
+        }
+
+        ul:hover {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+
+</html>
